@@ -1,0 +1,15 @@
+[Unit]
+Description=DETOX demo bot — draw (Onyx Hub ecosystem, demo)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/detox
+ExecStart=/usr/bin/python3 -m draw.run
+Restart=on-failure
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
